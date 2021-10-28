@@ -1,0 +1,42 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest src/** --coverage --watch",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "build": "rimraf ./dist && tsc",
+    "start": "ts-node ./src/index.ts",
+    "simulation": "npm run simulation-1 && npm run simulation-2 && npm run simulation-3 && npm run simulation-4",
+    "simulation-1": "ts-node ./src/index.ts ./src/tests/data/simulation-1",
+    "simulation-2": "ts-node ./src/index.ts ./src/tests/data/simulation-2",
+    "simulation-3": "ts-node ./src/index.ts ./src/tests/data/simulation-3",
+    "simulation-4": "ts-node ./src/index.ts ./src/tests/data/simulation-4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dontcry2013/robot.git"
+  },
+  "author": "Zac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dontcry2013/robot/issues"
+  },
+  "homepage": "https://github.com/dontcry2013/robot#readme",
+  "dependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^8.1.0",
+    "jest": "^27.3.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.7"
+  }
+}
