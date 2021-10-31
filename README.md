@@ -21,6 +21,8 @@ $ cd robot
 - Run `npm install` to install package dependencies.
 - Run `npm test` to run tests
 
+![Test Result](./jest-coverage.png "10 million lines")
+
 ### Run Robot Simulation
 - Run `npm install` to install package dependencies.
 - Run `npm run simulation` to start robot simulation. This will run examples:
