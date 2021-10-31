@@ -2,16 +2,26 @@ import fs, { ReadStream } from 'fs';
 import readline from 'readline';
 
 export default class Reader {
+  private _filePath: string;
   private _input: ReadStream;
   private _lineNumber: number;
   private _batchSize: number;
   private _data: string[];
 
   constructor(filePath: string, batchSize?: number) {
+    this._filePath = filePath;
     this._input = fs.createReadStream(filePath);
     this._lineNumber = 0;
     this._batchSize = batchSize || 100;
     this._data = [];
+  }
+
+  get filePath(): string {
+    return this._filePath;
+  }
+
+  get batchSize(): number {
+    return this._batchSize;
   }
 
   public readByBatch = async (cb: (lines: string[], event: string) => void) => {

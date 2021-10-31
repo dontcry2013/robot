@@ -30,7 +30,7 @@ export default class Robot {
     return this._direction;
   }
 
-  private place (x: number, y: number, direction: Direction): void {
+  public place (x: number, y: number, direction: Direction): void {
     if (!this._table.isWithinRange(x, y)) {
       return;
     }

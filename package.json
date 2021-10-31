@@ -7,7 +7,7 @@
     "test": "jest src/** --coverage --watch",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix",
-    "build": "rimraf ./dist && tsc",
+    "build": "rimraf ./dist && tsc -p tsconfig-build.json",
     "start": "ts-node ./src/index.ts",
     "simulation": "npm run simulation-1 && npm run simulation-2 && npm run simulation-3 && npm run simulation-4",
     "simulation-1": "ts-node ./src/index.ts ./src/tests/data/simulation-1",
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/dontcry2013/robot.git"
   },
-  "author": "Zac",
+  "author": "Zach",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dontcry2013/robot/issues"
