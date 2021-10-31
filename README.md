@@ -56,3 +56,7 @@ npm start ./src/tests/data/simulation-4 WithStream
 ```
 npm start ./src/tests/data/simulation-4 WithoutStream
 ```
+
+### Test with 10 million commands
+
+![Test Result](./img.png "10 million lines")
