@@ -30,6 +30,10 @@ export const startApplication = async (fileName: string): Promise<void> => {
       validCommands.forEach(cmd => robot.run(cmd))
 
       display.timeEnd('WithoutStream');
+      const used: any = process.memoryUsage();
+      for (let key in used) {
+        display.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+      }
   } catch (error) {
     display.error('Oops! Something went wrong.', error);
   }
@@ -61,6 +65,10 @@ export const startApplicationWithStream = async (fileName: string): Promise<void
       cmd && robot.run(cmd);
       if (event == 'close') {
         display.timeEnd('WithStream');
+        const used: any = process.memoryUsage();
+        for (let key in used) {
+          display.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+        }
       }
     });
 
@@ -89,6 +97,10 @@ export const startApplicationWithStreamByBatch = async (fileName: string, batchS
         validCommands.forEach(cmd => robot.run(cmd));
         if (event == 'close') {
           display.timeEnd('WithStreamByBatch');
+          const used: any = process.memoryUsage();
+          for (let key in used) {
+            display.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+          }
         }
       });
 

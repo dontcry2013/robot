@@ -19,7 +19,7 @@ try {
     
     } else {
     
-      startApplicationWithStreamByBatch(fileName, 30);
+      startApplicationWithStreamByBatch(fileName, 10000);
     
     }
   } else {
